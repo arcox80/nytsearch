@@ -1,3 +1,32 @@
-* {
-  box-sizing: border-box;
+body {
+  background-color: #e8e8e8;
+}
+
+main {
+  padding-left: 10px;
+}
+
+nav {
+  background-color: #345588;
+}
+
+.hidden {
+  display: none;
+}
+
+.search {
+  width: 50%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+input.js-query {
+  border: 1px solid black;
+  background: #f7f7f7;
+}
+
+input[type=text] {
+  height: auto;
+  width: auto;
+  padding: 3px;
 }

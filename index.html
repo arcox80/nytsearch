@@ -1,10 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
 
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      Title / Logo
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="search">
+      <form action="#" class="js-search-form">
+        <label for="query"></label>
+        <input type="text" class="js-query">
+        <button type="submit" class="search-button">Search</button>
+      </form>
+    </section>
+
+    <section class="article-list">
+      <div class="row" id="divlist">
+
+      </div>
+    </section>
+
+    <article class="hidden">
+      <div class="col s12 m7">
+        <div class="card horizontal">
+          <div class="card-image">
+            <img src="http://lorempixel.com/100/190/nature/6">
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Card Title</span>
+              <p class="js-snippet">I am a very simple card. I am good at containing small bits of information.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+
+    <article class="js-post">
+      <h2></h2>
+      <h3></h3>
+    </article>
+
+  </main>
+
+  <aside class="">
+    //aside results list
+  </aside>
+
+  <footer>
+
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+
 </html>
