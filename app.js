@@ -21,12 +21,12 @@ function openArticle(article) {
   }
   $('.author span').text(article.byline.original);
 
-  var dateFormat = article.pub_date.slice(0,10).split("-");
+  var dateFormat = article.pub_date.slice(0, 10).split("-");
   Array.prototype.move = function (from, to) {
     this.splice(to, 0, this.splice(from, 1)[0]);
     return this;
   };
-  var newDateFormat = dateFormat.move(0,2).join('/');
+  var newDateFormat = dateFormat.move(0, 2).join('/');
   $('.date span').text(newDateFormat);
 
   $('.area span').text(article.section_name + ' Section');
@@ -52,6 +52,9 @@ function submitQuery() {
   getDataFromApi(state.query, function(data) {
     data.response.docs.forEach(function(item) {
       $('ul').append('<li>' + item.headline.main +'</li>');
+      $('li').click(function(event) {
+        openArticle(item);
+      });
       var htmlItem = $('article.hidden').clone();
       htmlItem.find('.card-title').text(item.headline.main);
       $('.card').click(function(event) {
