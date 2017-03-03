@@ -4,7 +4,6 @@ function getDataFromApi(term, callback) {
   var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
   url += '?' + $.param({'api-key': "f8d4f007b2584ff48d7b7177f0f4008c", q: term});
   $.ajax({url: url, method: 'GET'}).done(function(result) {
-    console.log(result);
     callback(result);
   }).fail(function(err) {
     throw err;
@@ -21,6 +20,7 @@ function openArticle(article) {
   }
   $('.author span').text(article.byline.original);
 
+  //Have to format the date so it's readable
   var dateFormat = article.pub_date.slice(0, 10).split("-");
   Array.prototype.move = function (from, to) {
     this.splice(to, 0, this.splice(from, 1)[0]);
@@ -46,20 +46,20 @@ function closeArticle() {
   $('.article-list').show();
 }
 
+function closure (item) {
+  return function(event) {
+    openArticle(item);
+  };
+}
+
 function submitQuery() {
   state.query = $('#js-search').val();
   localStorage.query = state.query;
   getDataFromApi(state.query, function(data) {
     data.response.docs.forEach(function(item) {
-      $('ul').append('<li>' + item.headline.main +'</li>');
-      $('li').click(function(event) {
-        openArticle(item);
-      });
       var htmlItem = $('article.hidden').clone();
       htmlItem.find('.card-title').text(item.headline.main);
-      $('.card').click(function(event) {
-        openArticle(item);
-      });
+      htmlItem.find('.card').click(closure(item));
       htmlItem.find('.js-snippet').text(item.snippet);
       var imageFound = item.multimedia.find(function(image) {
         return image.subtype === 'thumbnail';
@@ -71,6 +71,10 @@ function submitQuery() {
       }
       htmlItem.removeClass('hidden');
       $('section #divlist').append(htmlItem);
+
+      var sideBarItem = $('<li><a href="#">' + item.headline.main +'</a></li>');
+      sideBarItem.click(closure(item));
+      $('ul').append(sideBarItem);
     });
   });
 }
@@ -84,7 +88,7 @@ $(function() {
   Materialize.updateTextFields();
   $('form').submit(function(event) {
     event.preventDefault();
-    //$('.results').detach();
+    $('section #divlist').empty();
     submitQuery();
   })
   $('#search-icon').click(function() {
