@@ -3,9 +3,11 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <meta name="viewport" content="width=device-width">
+  <title>New York Times Search Page</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
 </head>
 
@@ -13,18 +15,24 @@
 
   <header>
     <nav>
-      Title / Logo
+      <img src="nyt-title-full.png">
     </nav>
   </header>
 
   <main>
 
     <section class="search">
-      <form action="#" class="js-search-form">
-        <label for="query"></label>
-        <input type="text" class="js-query">
-        <button type="submit" class="search-button">Search</button>
-      </form>
+      <h2>Search the New York Times for any subject that interests you.</h2>
+      <p>Your search will be saved, so you can always come back and check for any new articles.</p>
+      <div class="row">
+        <form class="col s12">
+          <div>
+            <label for="js-search">Enter Text Here...</label>
+          </div>
+          <input type="text" id="js-search" class="text-search">
+          <a class="btn-floating btn-large waves-effect waves-light #01579b light-blue darken-4"><i class="material-icons" id="search-icon">search</i></a>
+        </form>
+      </div>
     </section>
 
     <section class="article-list">
@@ -33,8 +41,8 @@
       </div>
     </section>
 
-    <article class="hidden">
-      <div class="col s12 m7">
+    <article class="hidden results">
+      <div class="col s12 m6">
         <div class="card horizontal">
           <div class="card-image">
             <img src="http://lorempixel.com/100/190/nature/6">
@@ -42,10 +50,9 @@
           <div class="card-stacked">
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">Card Title</span>
-              <p class="js-snippet">I am a very simple card. I am good at containing small bits of information.</p>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
+              <a href="#">Click For More Details</a>
             </div>
           </div>
         </div>
@@ -53,16 +60,36 @@
     </article>
 
 
-    <article class="js-post">
-      <h2></h2>
-      <h3></h3>
+    <article class="js-post post">
+      <div class="wrapper hidden">
+        <button type="button" name="button" class="close">X</button>
+        <h1></h1>
+        <img src="">
+        <div class="byline">
+          <div class="author">
+            <span></span>
+          </div>
+          <div class="date">
+            <span></span>
+          </div>
+          <div class="area">
+            <span></span>
+          </div>
+        </div>
+        <p></p>
+        <a href="" target="_blank">Click Here To Go To the Full Article</a>
+      </div>
     </article>
 
   </main>
 
-  <aside class="">
-    //aside results list
+<div class="aside-div">
+  <aside class="hidden">
+    <h5>Search Results</h5>
+    <ul>
+    </ul>
   </aside>
+</div>
 
   <footer>
 
