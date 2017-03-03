@@ -20,7 +20,15 @@ function openArticle(article) {
     $('.js-post img').attr('src', 'http://www.nytimes.com/' + imageFound.url);
   }
   $('.author span').text(article.byline.original);
-  $('.date span').text(article.pub_date);
+
+  var dateFormat = article.pub_date.slice(0,10).split("-");
+  Array.prototype.move = function (from, to) {
+    this.splice(to, 0, this.splice(from, 1)[0]);
+    return this;
+  };
+  var newDateFormat = dateFormat.move(0,2).join('/');
+  $('.date span').text(newDateFormat);
+
   $('.area span').text(article.section_name + ' Section');
   $('.js-post p').text(article.lead_paragraph);
   $('.js-post a').attr('href', article.web_url);
