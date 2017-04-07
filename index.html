@@ -5,33 +5,46 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>New York Times Search Page</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:700|Montserrat:800" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
 
+
   <header>
+    <div class="screen">
     <nav>
-      <img src="nyt-title-full.png">
+      <a href="#"><img src="nyts-white.png" alt="New York Times Search logo" id="logo"></a>
     </nav>
+    <div class="title">
+      <h1>Search the New York Times</h1>
+      <p>Keep up to date with the lastest articles that interest you.</p>
+    </div>
+    <form class="col s12">
+      <input type="text" id="js-search" class="text-search" placeholder="Enter your search here...">
+      <button class="submit waves-effect waves-light #01579b light-blue darken-4"><i class="material-icons" id="search-icon">search</i></button>
+    </form>
+    </div>
   </header>
+
+
+
+
 
   <main>
 
     <section class="search">
-      <h2>Search the New York Times for any subject that interests you.</h2>
-      <p>Your search will be saved, so you can always come back and check for any new articles.</p>
-      <div class="row">
-        <form class="col s12">
-          <div>
-            <label for="js-search">Enter Text Here...</label>
-          </div>
-          <input type="text" id="js-search" class="text-search">
-          <a class="btn-floating btn-large waves-effect waves-light #01579b light-blue darken-4"><i class="material-icons" id="search-icon">search</i></a>
-        </form>
+      <div class="split-wrap">
+        <div class="split instructions">
+          <h5>Better Explanation Goes Here</h5>
+          <p>Your search will be saved, so you can always come back and check for any new articles.</p>
+        </div>
+        <div class="split side-image">
+        </div>
       </div>
     </section>
 
@@ -89,6 +102,12 @@
 </div>
 
   <footer>
+    <a href="#"><img src="nyts-white.png" alt="New York Times Search logo" id="logo"></a>
+    <p>Thank you to the New York Times API for making this page possible.</p>
+    <p>Contact:</p>
+    <p>GitHub</p>
+    <p>LinkedIn</p>
+    <p>Copyright</p>
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
