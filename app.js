@@ -74,10 +74,11 @@ function submitQuery() {
       htmlItem.removeClass('hidden');
       $('section #divlist').append(htmlItem);
       $('.search').hide();
-
+      /*
       var sideBarItem = $('<li><a href="#">' + item.headline.main +'</a></li>');
       sideBarItem.click(closure(item));
       $('ul').append(sideBarItem);
+      */
     });
   });
 }
