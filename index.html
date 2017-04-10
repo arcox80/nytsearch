@@ -17,45 +17,47 @@
 
   <header>
     <div class="screen">
-    <nav>
-      <a href="#"><img src="nyts-white.png" alt="New York Times Search logo" id="logo"></a>
-    </nav>
-    <div class="title">
-      <h1>Search the New York Times</h1>
-      <p>Keep up to date with the lastest articles that interest you.</p>
-    </div>
-    <form class="col s12">
-      <input type="text" id="js-search" class="text-search" placeholder="Enter your search here...">
-      <button class="submit waves-effect waves-light #01579b light-blue darken-4"><i class="material-icons" id="search-icon">search</i></button>
-    </form>
+      <nav>
+        <a href="#"><img src="nyts-white.png" alt="New York Times Search logo" id="logo"></a>
+      </nav>
+      <div class="row">
+        <div class="col s12 title">
+          <h1>Search the New York Times</h1>
+          <p>Keep up to date with the lastest articles that interest you.</p>
+        </div>
+      </div>
+
+      <form>
+        <div class="row container">
+          <input type="text" id="js-search" class="text-search col s10 m8 offset-m1 l8 offset-l1" placeholder="Enter your search here...">
+          <button class="col s2 m1 l1 submit waves-effect waves-light #01579b light-blue darken-4"><i class="material-icons" id="search-icon">search</i></button>
+        </div>
+      </form>
     </div>
   </header>
-
-
-
 
 
   <main>
 
     <section class="search">
-      <div class="split-wrap">
-        <div class="split instructions">
+      <div class="row container split-wrap">
+        <div class="col s12 m12 l6 instructions">
           <h5>Better Explanation Goes Here</h5>
           <p>Your search will be saved, so you can always come back and check for any new articles.</p>
         </div>
-        <div class="split side-image">
+        <div class="col s12 m12 l6 side-image">
         </div>
       </div>
     </section>
 
     <section class="article-list">
-      <div class="row" id="divlist">
+      <div class="row container" id="divlist">
 
       </div>
     </section>
 
     <article class="hidden results">
-      <div class="col s12 m7">
+      <div class="col s12 m12 l12">
         <div class="card horizontal">
           <div class="card-image">
             <img src="http://lorempixel.com/100/190/nature/6">
@@ -72,8 +74,8 @@
 
     <article class="js-post post">
       <div class="wrapper hidden">
-        <button type="button" name="button" class="close">X</button>
-        <h1></h1>
+        <span class="close">close</span>
+        <h3></h3>
         <img src="">
         <div class="byline">
           <div class="author">
@@ -93,25 +95,30 @@
 
   </main>
 
-<div class="aside-div">
-  <aside class="hidden">
-    <h5>Search Results</h5>
-    <ul>
-    </ul>
-  </aside>
-</div>
+  <div class="aside-div">
+    <aside class="hidden">
+      <h5>Search Results</h5>
+      <ul>
+      </ul>
+    </aside>
+  </div>
 
   <footer>
-    <a href="#"><img src="nyts-white.png" alt="New York Times Search logo" id="logo"></a>
-    <p>Thank you to the New York Times API for making this page possible.</p>
-    <p>Contact:</p>
-    <p>GitHub</p>
-    <p>LinkedIn</p>
-    <p>Copyright</p>
+    <div class="row container">
+      <a href="#"><img src="nyts-white.png" alt="New York Times Search logo" id="logo"></a>
+      <p class="thanks">Thanks for visiting the New York Times Search Page!</p>
+      <p class="contact">Contact Me:
+        <a href="#"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x fa-inverse"></i><i class="fa fa-linkedin fa-stack-1x"></i></span></a>
+        <a href="#"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-github fa-stack-2x fa-inverse"></i></span></a>
+      </p>
+      <p>This page was made possible by the <a href="https://developer.nytimes.com/">New York Times API</a>
+        <br> &copy; 2017 NYTS Page</p>
+    </div>
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  <script src="https://use.fontawesome.com/ff16f58213.js"></script>
   <script type="text/javascript" src="app.js"></script>
 </body>
 

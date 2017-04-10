@@ -11,12 +11,14 @@ function getDataFromApi(term, callback) {
 }
 
 function openArticle(article) {
-  $('.js-post h1').text(article.headline.main);
+  $('.js-post h3').text(article.headline.main);
   var imageFound = article.multimedia.find(function(image) {
     return image.subtype === 'xlarge';
   });
   if (imageFound) {
     $('.js-post img').attr('src', 'http://www.nytimes.com/' + imageFound.url);
+  } else {
+    $('.js-post img').attr('src', 'stack.jpg');
   }
   $('.author span').text(article.byline.original);
 
@@ -37,7 +39,7 @@ function openArticle(article) {
   $('.search p').hide();
   $('.search').css('margin-top', '20px');
   $('.wrapper').show();
-  $('aside').show();
+  //$('aside').show();
 }
 
 function closeArticle() {
@@ -71,6 +73,7 @@ function submitQuery() {
       }
       htmlItem.removeClass('hidden');
       $('section #divlist').append(htmlItem);
+      $('.search').hide();
 
       var sideBarItem = $('<li><a href="#">' + item.headline.main +'</a></li>');
       sideBarItem.click(closure(item));
