@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Merriweather:700|Montserrat:800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Domine|Merriweather:400,700,700i" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
 </head>
 
@@ -28,9 +28,19 @@
       </div>
 
       <form>
-        <div class="row container">
+        <div class="row container form-container">
           <input type="text" id="js-search" class="text-search col s10 m8 offset-m1 l8 offset-l1" placeholder="Enter your search here...">
+          <input type="text" id="js-beginDate" class="dates col s6 m4 offset-m1 l4 offset-l1" placeholder="Format: YYYYMMDD">
+          <input type="text" id="js-endDate" class="dates col s6 m4 l4" placeholder="Format: YYYYMMDD">
           <button class="col s2 m1 l1 submit waves-effect waves-light #01579b light-blue darken-4"><i class="material-icons" id="search-icon">search</i></button>
+        </div>
+        <div class="row container">
+          <div class="col s6 m4 offset-m1 l4 offset-l1">
+            <label for="js-begindDate">Restricts Results to this date or later</label>
+          </div>
+          <div class="col s6 m4 l4">
+            <label for="js-endDate">Restricts Results to this date or earlier</label>
+          </div>
         </div>
       </form>
     </div>
@@ -43,9 +53,11 @@
       <div class="row container split-wrap">
         <div class="col s12 m12 l6 instructions">
           <h5>Reading the Newspaper Has Never Been Easier</h5>
-          <p>With the New York Times Search Page, you can search for articles from September 18, 1851 to today.
-            Each search result will give you the title, author, date, lead paragraph, and image if available.
-            Your search will be saved, so you can always come back and check for any new articles or just pick up where you left off.</p>
+          <p>With the New York Times Search (NYTS) page, you can quickly search through the New York Times database using minimal bandwidth.
+            You can search for articles dated from September 18, 1851 all the way to today. So you can perform some quick research on an historical event or keep up with current events.
+            When available, each search result will give you the title, author, date, lead paragraph, image, and link to the full article.
+          </p>
+          <p>Keep scrolling to learn more or go ahead and start your search!</p>
         </div>
         <div class="col s12 m12 l6 side-image">
         </div>
@@ -77,16 +89,16 @@
     <article class="js-post post">
       <div class="wrapper container hidden">
         <span class="close">close</span>
-        <h3></h3>
+        <h3 class="headline"></h3>
         <img src="">
-        <div class="byline">
-          <div class="author">
+        <div class="byline row">
+          <div class="author col s4">
             <span></span>
           </div>
-          <div class="date">
+          <div class="date col s4">
             <span></span>
           </div>
-          <div class="area">
+          <div class="area col s4">
             <span></span>
           </div>
         </div>

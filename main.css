@@ -5,6 +5,7 @@ html {
 body {
   height: 100%;
   background-color: #eff4f5;
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 main {
@@ -31,7 +32,12 @@ header {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: "Merriweather", "Montserrat", sans-serif;
+  font-family: "Domine", "Merriweather", serif;
+}
+
+h3.headline {
+  font-style: italic;
+  font-weight: bold;
 }
 
 header p {
@@ -42,6 +48,10 @@ header p {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+
+.title h1 {
+  font-weight: bold;
 }
 
 nav {
@@ -57,6 +67,10 @@ nav {
   padding: 5px;
 }
 
+.form-container {
+  margin-bottom: 0;
+}
+
 input[type=text] {
   background-color: white;
   color: black;
@@ -66,12 +80,26 @@ input[type=text] {
   outline: none;
   height: 2rem;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin: 20px 0 20px 0;
   padding: 5px 10px 5px 10px;
   box-shadow: none;
   box-sizing: content-box;
   transition: all 0.3s;
+}
+
+input[type=text].dates {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#js-endDate {
+  border-left: 1px solid black;
+  border-radius: 0 5px 5px 0;
+}
+
+label {
+  color: white;
 }
 
 .material-icons {
@@ -185,9 +213,25 @@ aside h5 {
   padding: 0 4px 0 4px;
 }
 
-.byline {
-  display: inline-block;
+.byline.row {
+  margin-top: 10px;
+  border-top: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Domine", "Merriweather", serif;
 }
+
+.date {
+  text-align: center;
+}
+
+.area {
+  text-align: right;
+}
+
 
 footer {
   bottom: 0;
