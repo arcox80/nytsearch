@@ -1,15 +1,17 @@
 var state = {
   beginDate: 18510918,
-  endDate: 20200101
+  endDate: 20200101,
+  page: 0
 };
 
-function getDataFromApi(term, beginDate, endDate, callback) {
+function getDataFromApi(term, beginDate, endDate, pageNum, callback) {
   var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
   url += '?' + $.param({
     'api-key': "f8d4f007b2584ff48d7b7177f0f4008c",
     'q': term,
     'begin_date': beginDate,
-    'end_date': endDate
+    'end_date': endDate,
+    'page': pageNum
   });
   $.ajax({url: url, method: 'GET'}).done(function(result) {
     callback(result);
@@ -67,20 +69,48 @@ function closure (item) {
   };
 }
 
+function previousPage() {
+  $('#previous').click(function() {
+    state.page --;
+    if (state.page === 0) {
+      $('#previous').hide();
+    }
+    submitQuery();
+  })
+}
+
+function nextPage() {
+  $('#next').click(function() {
+    state.page ++;
+    if (state.page === 10) {
+      $('#next').hide();
+    }
+    submitQuery();
+  })
+}
+
 function submitQuery() {
+  $('#divlist').empty();
   state.query = $('#js-search').val();
   if ($('#js-beginDate').val()) {
-    state.beginDate = $('#js-beginDate').val();
+    var beginDate = $('#js-beginDate').val();
+    var dateArray = beginDate.split('/');
+    state.beginDate = dateArray[2] + dateArray[0] + dateArray[1];
     localStorage.beginDate = state.beginDate;
   }
   if ($('#js-endDate').val()) {
-    state.endDate = $('#js-endDate').val();
+    var endDate = $('#js-endDate').val();
+    var dateArray = endDate.split('/');
+    state.endDate = dateArray[2] + dateArray[0] + dateArray[1];
     localStorage.endDate = state.endDate;
   }
   localStorage.query = state.query;
-  getDataFromApi(state.query, state.beginDate, state.endDate, function(data) {
+  getDataFromApi(state.query, state.beginDate, state.endDate, state.page, function(data) {
     data.response.docs.forEach(function(item) {
       var htmlItem = $('article.hidden').clone();
+      if (item.headline.main.length > 130) {
+        item.headline.main = item.headline.main.substring(0,130) + '...';
+      }
       htmlItem.find('.card-title').text(item.headline.main);
       htmlItem.find('.card').click(closure(item));
       htmlItem.find('.js-snippet').text(item.snippet);
@@ -105,6 +135,10 @@ function submitQuery() {
 }
 
 $(function() {
+  $('#js-beginDate').mask('00/00/0000');
+  $('#js-endDate').mask('00/00/0000');
+  previousPage();
+  nextPage();
   if ('query' in localStorage) {
     state.query = localStorage.query;
     $('#js-search').val(state.query);

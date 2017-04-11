@@ -153,6 +153,17 @@ aside h5 {
   height: 320px;
 }
 
+.results-image {
+  background-image: url(results.png);
+  background-size: cover;
+  height: 320px;
+}
+
+.call {
+  font-weight: bold;
+  text-align: center;
+}
+
 .submit {
   position: absolute;
   border: none;
@@ -249,6 +260,10 @@ footer {
 
 footer .row {
   margin-bottom: 0;
+}
+
+.fa-linkedin:hover, .fa-github:hover {
+  color: gray;
 }
 
 .contact a {
