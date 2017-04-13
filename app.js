@@ -128,11 +128,6 @@ function submitQuery() {
       $('section #divlist').append(htmlItem);
       $('.search').hide();
       $('.pagination').show();
-      /*
-      var sideBarItem = $('<li><a href="#">' + item.headline.main +'</a></li>');
-      sideBarItem.click(closure(item));
-      $('ul').append(sideBarItem);
-      */
     });
   });
 }
