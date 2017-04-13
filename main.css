@@ -144,7 +144,6 @@ aside h5 {
 .instructions {
   padding: 25px 10px 25px 10px;
   background-color: white;
-  height: 320px;
 }
 
 .side-image {
@@ -157,6 +156,7 @@ aside h5 {
   background-image: url(results.png);
   background-size: cover;
   height: 320px;
+  border: 1px solid #e0e0e0;
 }
 
 .call {
@@ -171,6 +171,32 @@ aside h5 {
   margin-top: 20px;
   margin-bottom: 20px;
   height: 2rem;
+}
+
+.pagination {
+  text-align: center;
+}
+
+.pagination button {
+  background-color: #01579b;
+  color: white;
+  border: none;
+  width: 70px;
+  padding: 2px 3px 3px 3px;
+}
+
+button:disabled,
+button[disabled] {
+  background-color: #b1dcfb;
+  cursor: not-allowed;
+}
+
+#previous {
+  border-radius: 10px 0 0 10px;
+}
+
+#next {
+  border-radius: 0 10px 10px 0;
 }
 
 .hidden {
@@ -291,6 +317,15 @@ footer .row {
   }
   .aside-div {
     width: 75%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .instructions {
+    height: 320px;
+  }
+  div.col.side-image {
+    float: right;
   }
 }
 

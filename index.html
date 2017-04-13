@@ -30,8 +30,8 @@
       <form>
         <div class="row container form-container">
           <input type="text" id="js-search" class="text-search col s10 m8 offset-m1 l8 offset-l1" placeholder="Enter your search here...">
-          <input type="text" id="js-beginDate" class="dates col s6 m4 offset-m1 l4 offset-l1" placeholder="Format: YYYYMMDD">
-          <input type="text" id="js-endDate" class="dates col s6 m4 l4" placeholder="Format: YYYYMMDD">
+          <input type="text" id="js-beginDate" class="dates col s6 m4 offset-m1 l4 offset-l1" placeholder="Format: MM/DD/YYYY">
+          <input type="text" id="js-endDate" class="dates col s6 m4 l4" placeholder="Format: MM/DD/YYYY">
           <button class="col s2 m1 l1 submit waves-effect waves-light #01579b light-blue darken-4"><i class="material-icons" id="search-icon">search</i></button>
         </div>
         <div class="row container">
@@ -51,6 +51,8 @@
 
     <section class="search">
       <div class="row container split-wrap">
+        <div class="col s12 m12 l6 side-image">
+        </div>
         <div class="col s12 m12 l6 instructions">
           <h5>Reading the Newspaper Has Never Been Easier</h5>
           <p>With the New York Times Search (NYTS) page, you can quickly search through the New York Times database using minimal bandwidth.
@@ -59,8 +61,6 @@
           </p>
           <p class="call">Keep scrolling to learn more or go ahead and start your search!</p>
         </div>
-        <div class="col s12 m12 l6 side-image">
-        </div>
       </div>
 
       <div class="row container split-wrap">
@@ -68,7 +68,10 @@
         </div>
         <div class="col s12 m12 l6 instructions">
           <h5>Easily Navigate Your List of Results</h5>
-          <p>
+          <p>A search will return you a list of results displaying the headline for each one. Simply click on the headline and a small snippet of the article will be displayed.
+            Click on the link to see the full article or close the snippet and continue your search.</p>
+          <p>Your results will be displayed in groups of 10. You can page through the results using the buttons at the bottom of the list. Enjoying quickly scanning through your
+            results without having to trudge through the NYT website.
           </p>
         </div>
 
@@ -79,8 +82,10 @@
       <div class="row container" id="divlist">
 
       </div>
-      <button type="button" name="button" id="previous">Previous</button>
-      <button type="button" name="button" id="next">Next</button>
+      <div class="container pagination hidden">
+        <button type="button" name="button" id="previous" disabled="true">Previous</button>
+        <button type="button" name="button" id="next">Next</button>
+      </div>
     </section>
 
     <article class="hidden results">

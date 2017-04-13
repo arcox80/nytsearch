@@ -72,8 +72,9 @@ function closure (item) {
 function previousPage() {
   $('#previous').click(function() {
     state.page --;
+    $('#next').prop('disabled', false);
     if (state.page === 0) {
-      $('#previous').hide();
+      $('#previous').prop('disabled', true);
     }
     submitQuery();
   })
@@ -82,8 +83,9 @@ function previousPage() {
 function nextPage() {
   $('#next').click(function() {
     state.page ++;
+    $('#previous').prop('disabled', false);
     if (state.page === 10) {
-      $('#next').hide();
+      $('#next').prop('disabled', true);
     }
     submitQuery();
   })
@@ -125,6 +127,7 @@ function submitQuery() {
       htmlItem.removeClass('hidden');
       $('section #divlist').append(htmlItem);
       $('.search').hide();
+      $('.pagination').show();
       /*
       var sideBarItem = $('<li><a href="#">' + item.headline.main +'</a></li>');
       sideBarItem.click(closure(item));
