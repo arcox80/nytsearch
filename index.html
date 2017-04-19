@@ -79,12 +79,17 @@
     </section>
 
     <section class="article-list">
-      <div class="input-field col s12">
-        <select id="selector">
-          <option value="" selected disabled>Choose...</option>
-          <option value="newest">Newest</option>
-          <option value="oldest">Oldest</option>
-        </select>
+      <div class="row dropdown">
+        <div class="col s6 m4 offset-m1 l2 offset-l2 results-title">
+          <h5>Search Results...</h5>
+        </div>
+        <div class="input-field col s4 offset-s2 m3 offset-m4 l1 offset-l5">
+          <select id="selector">
+            <option value="" selected disabled>Sort Order</option>
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+          </select>
+        </div>
       </div>
       <div class="row container" id="divlist">
 
