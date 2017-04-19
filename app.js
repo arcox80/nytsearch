@@ -24,7 +24,7 @@ function getDataFromApi(term, beginDate, endDate, pageNum, sortOrder, callback) 
 }
 
 function openArticle(article) {
-  $('.js-post h3').text(article.headline.main);
+  $('.js-post h4').text(article.headline.main);
   var imageFound = article.multimedia.find(function(image) {
     return image.subtype === 'xlarge';
   });
