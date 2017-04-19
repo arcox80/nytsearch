@@ -93,6 +93,15 @@ function nextPage() {
   })
 }
 
+function clearSearch() {
+  $('.js-clear').click(function() {
+    $("#js-search, textarea").val("");
+    submitQuery();
+    location.reload();
+  })
+
+}
+
 function submitQuery() {
   $('#divlist').empty();
   state.query = $('#js-search').val();
@@ -139,6 +148,7 @@ $(function() {
   $('#js-endDate').mask('00/00/0000');
   previousPage();
   nextPage();
+  clearSearch();
   $('select').material_select();
   $('#selector').change(function(event) {
     state.sort = event.target.value;

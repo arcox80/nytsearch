@@ -98,6 +98,21 @@ input[type=text].dates {
   border-radius: 0 5px 5px 0;
 }
 
+div.col.clear {
+  margin-top: 1rem;
+}
+
+a.link-clear {
+  padding: 2px;
+  background: white;
+  color: black;
+  display: block;
+  border-bottom: 1px solid #9e9e9e;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 0 0 3px;
+}
+
 label {
   color: white;
 }
@@ -146,9 +161,12 @@ label {
   height: 2rem;
 }
 
+.results-title {
+  margin-top: 1rem;
+}
+
 .results-title h5 {
   margin-bottom: 0;
-  margin-top: 1rem;
   font-size: 1.25rem;
 }
 
@@ -318,7 +336,6 @@ footer .row {
     font-size: 24px;
     font-weight: 300;
   }
-
   .card .card-content .card-title {
     display: block;
     line-height: 32px;
