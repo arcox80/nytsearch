@@ -138,6 +138,7 @@ function submitQuery() {
       htmlItem.removeClass('hidden');
       $('section #divlist').append(htmlItem);
       $('.search').hide();
+      $('.article-list').show();
       $('.pagination').show();
     });
   });
