@@ -100,6 +100,7 @@ input[type=text].dates {
 
 div.col.clear {
   margin-top: 1rem;
+  max-width: 140px;
 }
 
 a.link-clear {
@@ -357,6 +358,9 @@ footer .row {
   }
   .select-wrapper {
     min-width: 90px;
+  }
+  div.col.clear {
+    min-width: 140px;
   }
 }
 
