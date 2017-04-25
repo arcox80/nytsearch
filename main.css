@@ -311,8 +311,16 @@ footer {
   margin-top: 0;
 }
 
+.copyright {
+  margin-top: 0;
+}
+
 footer .row {
   margin-bottom: 0;
+}
+
+.left {
+  text-align: left;
 }
 
 .fa-linkedin:hover, .fa-github:hover {
