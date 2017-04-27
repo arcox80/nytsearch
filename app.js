@@ -107,14 +107,14 @@ function submitQuery() {
   state.query = $('#js-search').val();
   if ($('#js-beginDate').val()) {
     var beginDate = $('#js-beginDate').val();
-    var dateArray = beginDate.split('/');
-    state.beginDate = dateArray[2] + dateArray[0] + dateArray[1];
+    var dateArray = beginDate.split('-');
+    state.beginDate = dateArray[0] + dateArray[1] + dateArray[2];
     localStorage.beginDate = state.beginDate;
   }
   if ($('#js-endDate').val()) {
     var endDate = $('#js-endDate').val();
-    var dateArray = endDate.split('/');
-    state.endDate = dateArray[2] + dateArray[0] + dateArray[1];
+    var dateArray = endDate.split('-');
+    state.endDate = dateArray[0] + dateArray[1] + dateArray[2];
     localStorage.endDate = state.endDate;
   }
   localStorage.query = state.query;
@@ -145,8 +145,8 @@ function submitQuery() {
 }
 
 $(function() {
-  $('#js-beginDate').mask('00/00/0000');
-  $('#js-endDate').mask('00/00/0000');
+  //$('#js-beginDate').mask('00/00/0000');
+  //$('#js-endDate').mask('00/00/0000');
   previousPage();
   nextPage();
   clearSearch();
